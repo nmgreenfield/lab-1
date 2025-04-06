@@ -117,7 +117,7 @@ For these problems, we will continue to work with the `mpg` data frame, making v
 11. The `fl` variable describes the type of fuel for each car, with levels: `p`, `r`, `e`, `d`, and `c`. Do some research into what each of these labels mean! Then, use the `if_else()` function to create a new variable (`fuel_type`) with two levels: `petrol` (any car using petrolium-based gas) and `alternative energy` (any car not using petrolium-based gas).
 
 ```{r}
-table(mpg$fl)
+#table(mpg$fl)
 
 mpg <- mpg %>%
   mutate(fuel_type = ifelse(fl %in% c("d","p","r"), "petrol", "alternative energy"))
@@ -134,7 +134,6 @@ mpg <- mpg %>%
     drv == "4" ~ "four wheel",
     )
   )
-  
 ```
 
 (string split + remove extra ")" ) 13. The `trans` variable contains two pieces of information, (1) the transmission style (`auto` or `manual`) and the specific type of transmission (e.g., `l5`, `m5`). Using the `str_split()` function, create a new variable (`trans_type`) containing the specific type of transmission of each car. Once you've made this new variable, use the `rename()` function to change the name of the `trans` column to `trans_style`.\
@@ -150,4 +149,17 @@ mpg <- mpg %>%
 
 14. Find someone who took Stat 331 from a different professor than you. Compare your experiences. Tell me their name and professor. List one or two things that you think you learned more about, and one or two things that they learned more about.
 
+- Nick
+- Frame
+- Twitter package
+- regular expressions
+
 15. Find someone in the class who **does not** share your birth month. Tell me their name and birthday, and use R to find out how many days apart your birthdays are.
+
+- Zach
+- 8/30/01
+
+```{r}
+as.Date("2001-08-30") - as.Date("1998-04-22")
+```
+
